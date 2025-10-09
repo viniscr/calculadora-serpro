@@ -13,7 +13,7 @@ export class Calculadora {
     //IRPF
     this.inss = 951.62;
     this.alicotaIR = 0.275;
-    this.baseDeducao = 896.00;
+    this.baseDeducao = 908.73;
 
     //GRATIFICACAO
     this.p_gratificacao = {
