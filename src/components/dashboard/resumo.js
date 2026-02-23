@@ -15,7 +15,7 @@ export default function Resumo({ data }) {
       />
       
       <div className="mb-2 p-2 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg">
-        <p className="text-[10px] text-blue-700 font-semibold mb-0.5">Total Líquido</p>
+        <p className="text-[10px] text-blue-700 font-semibold mb-0.5">Total Líquido a Receber</p>
         <dd className="text-xl font-bold text-blue-600">
           {`R$ ${data.totais}`}
         </dd>
@@ -23,13 +23,13 @@ export default function Resumo({ data }) {
 
       <div className="space-y-0.5">
         <CardItem
-          title="Líquido:"
+          title="Salário Líquido:"
           value={`R$ ${data.remuneracao.liquido}`}
           colorClass="text-blue-600"
         />
 
         <CardItem
-          title="Alimentação:"
+          title="Vale Alimentação:"
           value={`R$ ${data.outros.alimentacao}`}
           colorClass="text-blue-600"
         />
