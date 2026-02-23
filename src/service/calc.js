@@ -11,7 +11,7 @@ export class Calculadora {
     this.p_fgts = 0.08;
 
     //IRPF
-    this.inss = 951.62;
+    this.inss = 988.07;
     this.alicotaIR = 0.275;
     this.baseDeducao = 908.73;
 
