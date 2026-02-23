@@ -15,75 +15,69 @@ export default function SerprosForm({ percentualSerpros, setPercentualSerpros, i
   }
 
   return (
-    <div className="border-b border-gray-900/10 pb-12">
-      <h2 className="text-base font-semibold leading-7 text-gray-900">
-        Serpros PS-II
-      </h2>
-      <p className="mt-1 text-sm leading-6 text-gray-600">
-        Configurações de Serpros
-      </p>
+    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-3.5">
+      <div className="flex items-center gap-1.5 mb-2.5">
+        <svg className="w-4 h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <h2 className="text-sm font-bold text-gray-800">Serpros PS-II</h2>
+      </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-        <div className="sm:col-span-1">
-          <label
-            htmlFor="serpros"
-            className="block text-sm font-medium leading-6 text-gray-900"
-          >
+      <div className="grid grid-cols-3 gap-3">
+        <div>
+          <label htmlFor="serpros" className="block text-xs font-semibold text-gray-700 mb-1">
             Utiliza Serpros
           </label>
-          <div className="mt-2 w-24">
-            <input
-              id="serpros"
-              type="checkbox"
-              value={checkSerpros}
-              onChange={(e) => toggle()}
-            />
+          <div className="flex items-center h-9">
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                id="serpros"
+                type="checkbox"
+                checked={checkSerpros}
+                onChange={toggle}
+                className="sr-only peer"
+              />
+              <div className="w-10 h-5 bg-gray-300 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-cyan-600"></div>
+              <span className="ml-2 text-xs font-medium text-gray-700">{checkSerpros ? 'Sim' : 'Não'}</span>
+            </label>
           </div>
         </div>
 
         {checkSerpros && (
-          <div className="sm:col-span-1">
-            <label
-              htmlFor="percentual"
-              className="block text-sm font-medium leading-6 text-gray-900"
-            >
-              Contribução Variável
-            </label>
-            <div className="mt-2 w-24">
+          <>
+            <div className="animate-fade-in">
+              <label htmlFor="percentual" className="block text-xs font-semibold text-gray-700 mb-1">
+                Contrib. Var. (%)
+              </label>
               <input
                 id="percentual"
                 name="percentual"
                 type="number"
                 min={0}
                 max={15}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                placeholder="15"
+                className="block w-full rounded text-sm py-2 px-2.5 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-cyan-500 bg-white"
                 onChange={(event) => setPercentualSerpros(Number(event.target.value))}
                 value={percentualSerpros}
               />
             </div>
-          </div>
-        )}
-        {checkSerpros && (
-          <div className="sm:col-span-1">
-            <label
-              htmlFor="idadeAdesao"
-              className="block text-sm font-medium leading-6 text-gray-900"
-            >
-              Idade na Adesão
-            </label>
-            <div className="mt-2 w-24">
-            <input
+            <div className="animate-fade-in">
+              <label htmlFor="idadeAdesao" className="block text-xs font-semibold text-gray-700 mb-1">
+                Idade Adesão
+              </label>
+              <input
                 id="idadeAdesao"
                 name="idadeAdesao"
                 type="number"
                 min={18}
                 max={65}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                placeholder="27"
+                className="block w-full rounded text-sm py-2 px-2.5 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-cyan-500 bg-white"
                 onChange={(event) => setIdadeSerpros(Number(event.target.value))}
                 value={idadeSerpros}
               />
             </div>
-          </div>
+          </>
         )}
       </div>
     </div>

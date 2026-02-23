@@ -2,8 +2,10 @@ import Calculator from "@/components/calculator";
 
 export default function Home() {
   return (
-    <main className="flex screen flex-col align-center justify-center p-14 md:px-72">
-      <Calculator />
+    <main className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:px-24 xl:px-32">
+      <div className="w-full max-w-7xl">
+        <Calculator />
+      </div>
     </main>
   );
 }

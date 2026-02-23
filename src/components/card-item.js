@@ -1,13 +1,8 @@
 export default function CardItem({ title, value, colorClass = "" }) {
   return (
-    <div className="px-4 py-6 sm:grid sm:grid-rows-2 sm:gap-2 sm:px-0">
-      <dt className="text-sm font-medium leading-6 text-gray-900">{title}</dt>
-      <dd
-        className={
-          "mt-1 font-semibold text-sm leading-6 sm:col-span-2 sm:mt-0 " +
-          colorClass
-        }
-      >
+    <div className="flex justify-between items-center py-1 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors rounded px-1">
+      <dt className="text-[10px] font-medium text-gray-700">{title}</dt>
+      <dd className={"text-xs font-bold " + colorClass}>
         {value}
       </dd>
     </div>
