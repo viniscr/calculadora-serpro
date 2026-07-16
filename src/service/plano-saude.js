@@ -29,13 +29,14 @@ export class PlanoSaude {
       nivel < 105 ? this.participacao[0] : this.participacao[1];
 
     const faixaIndex = this._parseFaixa(idade);
-    const mensalidade = this.mensalidades[faixaIndex] < this.valorMinimoMensalidade ? this.valorMinimoMensalidade : this.mensalidades[faixaIndex];
+    const mensalidade = this.mensalidades[faixaIndex];
+    const desconto = mensalidade - participacao;
 
 
     return {
       mensalidade: mensalidade,
       participacao: participacao,
-      desconto: mensalidade - participacao,
+      desconto: desconto > this.valorMinimoMensalidade ? desconto : this.valorMinimoMensalidade,
     };
   }
 
