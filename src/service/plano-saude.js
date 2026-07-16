@@ -17,6 +17,8 @@ export class PlanoSaude {
       1894.03
     ];
 
+    this.valorMinimoMensalidade = 168.30;
+
     //101-8A - 104-8B => [0]
     //105-8A - 122-8B => [1]
     this.participacao = [590.15, 473.01];
@@ -27,7 +29,8 @@ export class PlanoSaude {
       nivel < 105 ? this.participacao[0] : this.participacao[1];
 
     const faixaIndex = this._parseFaixa(idade);
-    const mensalidade = this.mensalidades[faixaIndex];
+    const mensalidade = this.mensalidades[faixaIndex] < this.valorMinimoMensalidade ? this.valorMinimoMensalidade : this.mensalidades[faixaIndex];
+
 
     return {
       mensalidade: mensalidade,
